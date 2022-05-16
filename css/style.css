@@ -7,11 +7,15 @@
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+}
+
 .mainContainer {
-  height: 600px;
+  height: 37.5rem;
   margin: 50px auto 0;
   position: relative;
-  width: 600px;
+  width: 37.5rem;
 }
 
 .mainContainer > input {
@@ -19,7 +23,7 @@
 }
 
 .mems {
-  background-color: #333;
+  background-color: #fff;
   height: inherit;
   overflow: hidden;
   position: relative;
@@ -31,11 +35,20 @@
 }
 
 .text {
-  color: rgb(197, 82, 82);
+  color: #000;
+  opacity: 0;
+  z-index: 0;
+  transform: translate(200%);
+  -webkit-filter: hue-rotate(90deg);
+  transition: 0.5s;
+  position: absolute;
+  width: 25rem;
+  height: inherit;
+  font-size: 18px;
 }
 
 .mainContainer .memController {
-  position: absolute;
+  position: relative;
 }
 
 .mainContainer label {
@@ -54,11 +67,8 @@
   content: ' ';
   display: block;
   height: 12px;
-  /* left: -4px; */
-  position: absolute;
-  /* top: -4px; */
+  position: relative;
   width: 12px;
-  /* border-radius: 50%; */
 }
 
 .memContainer {
@@ -67,21 +77,26 @@
   position: absolute;
   width: inherit;
   z-index: 0;
-  transform: rotate(55deg);
-  -webkit-filter: hue-rotate(90deg);
-  transition: 1s;
-  
+  transform: translate(100%);
+  /* -webkit-filter: hue-rotate(90deg); */
+  transition: 0.5s;
 }
 
-.image1 {
-  background-image: url(../assets/images/mem1.jpg);
-  width: 100%;
-  height: 100%;
+.textCtrlContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.image2 {
+
+.mainContainer .memText {
+  position: relative;
+}
+
+.mem1 {
+  background-image: url(../assets/images/mem1.jpg);
+}
+.mem2 {
   background-image: url(../assets/images/mem2.jpg);
-  width: 100%;
-  height: 100%;
 }
 .mem3 {
   background-image: url(../assets/images/mem3.jpg);
@@ -109,15 +124,28 @@
   opacity: 1;
   z-index: 1;
   transform: none;
-  -webkit-filter: none;
+  /* -webkit-filter: none; */
 }
 
-#but1:checked ~ .memController label:nth-of-type(1),
-#but2:checked ~ .memController label:nth-of-type(2),
-#but3:checked ~ .memController label:nth-of-type(3),
-#but4:checked ~ .memController label:nth-of-type(4),
-#but5:checked ~ .memController label:nth-of-type(5),
-#but6:checked ~ .memController label:nth-of-type(6),
-#but7:checked ~ .memController label:nth-of-type(7) {
+#but1:checked ~ .textCtrlContainer .memText > .text1,
+#but2:checked ~ .textCtrlContainer .memText > .text2,
+#but3:checked ~ .textCtrlContainer .memText > .text3,
+#but4:checked ~ .textCtrlContainer .memText > .text4,
+#but5:checked ~ .textCtrlContainer .memText > .text5,
+#but6:checked ~ .textCtrlContainer .memText > .text6,
+#but7:checked ~ .textCtrlContainer .memText > .text7 {
+  opacity: 1;
+  z-index: 1;
+  transform: none;
+  /* -webkit-filter: none; */
+}
+
+#but1:checked ~ .textCtrlContainer .memController label:nth-of-type(1),
+#but2:checked ~ .textCtrlContainer .memController label:nth-of-type(2),
+#but3:checked ~ .textCtrlContainer .memController label:nth-of-type(3),
+#but4:checked ~ .textCtrlContainer .memController label:nth-of-type(4),
+#but5:checked ~ .textCtrlContainer .memController label:nth-of-type(5),
+#but6:checked ~ .textCtrlContainer .memController label:nth-of-type(6),
+#but7:checked ~ .textCtrlContainer .memController label:nth-of-type(7) {
   background: rgb(0, 70, 128);
 }
