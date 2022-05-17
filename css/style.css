@@ -25,9 +25,19 @@ h1 {
 .mems {
   background-color: #fff;
   height: inherit;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   width: inherit;
+}
+
+.text1,
+.text2,
+.text3,
+.text4,
+.text5,
+.text6,
+.text7 {
+  width: 0;
 }
 
 .wrap {
@@ -42,7 +52,7 @@ h1 {
   -webkit-filter: hue-rotate(90deg);
   transition: 0.5s;
   position: absolute;
-  width: 25rem;
+
   height: inherit;
   font-size: 18px;
 }
@@ -72,6 +82,7 @@ h1 {
 }
 
 .memContainer {
+  display: flex;
   height: inherit;
   opacity: 0;
   position: absolute;
@@ -80,6 +91,7 @@ h1 {
   transform: translate(100%);
   /* -webkit-filter: hue-rotate(90deg); */
   transition: 0.5s;
+  visibility: hidden;
 }
 
 .textCtrlContainer {
@@ -94,24 +106,45 @@ h1 {
 
 .mem1 {
   background-image: url(../assets/images/mem1.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 .mem2 {
   background-image: url(../assets/images/mem2.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 .mem3 {
   background-image: url(../assets/images/mem3.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 .mem4 {
   background-image: url(../assets/images/mem4.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 .mem5 {
   background-image: url(../assets/images/mem5.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 .mem6 {
   background-image: url(../assets/images/mem6.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 .mem7 {
   background-image: url(../assets/images/mem7.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 #but1:checked ~ .mems > .mem1,
@@ -124,6 +157,9 @@ h1 {
   opacity: 1;
   z-index: 1;
   transform: none;
+  visibility: visible;
+  width: 100%;
+  height: 100%;
   /* -webkit-filter: none; */
 }
 
@@ -137,6 +173,7 @@ h1 {
   opacity: 1;
   z-index: 1;
   transform: none;
+  width: 25rem;
   /* -webkit-filter: none; */
 }
 
@@ -148,4 +185,7 @@ h1 {
 #but6:checked ~ .textCtrlContainer .memController label:nth-of-type(6),
 #but7:checked ~ .textCtrlContainer .memController label:nth-of-type(7) {
   background: rgb(0, 70, 128);
+}
+
+@media screen and (max-width: 450px) {
 }
