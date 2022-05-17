@@ -1,0 +1,213 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.mainContainer {
+  height: 37.5rem;
+  margin: 20px auto 0;
+  position: relative;
+  width: 37.5rem;
+}
+
+.mainContainer > input {
+  display: none;
+}
+
+.mems {
+  background-color: #fff;
+  height: inherit;
+  position: relative;
+  width: inherit;
+}
+
+.text1,
+.text2,
+.text3,
+.text4,
+.text5,
+.text6,
+.text7 {
+  width: 0;
+}
+
+.wrap {
+  display: flex;
+}
+
+.text {
+  color: #000;
+  opacity: 0;
+  z-index: 0;
+  transform: translate(200%);
+  transition: 0.7s;
+  position: absolute;
+  height: 5rem;
+  font-size: 18px;
+}
+
+.mainContainer .memController {
+  position: relative;
+}
+
+.mainContainer label {
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width: 25px;
+  border-radius: 50%;
+  background-clip: content-box;
+  background: rgb(128, 128, 128);
+  border: 6px solid rgba(255, 255, 255, 1);
+}
+
+/* .mainContainer label:focus {
+  content: ' ';
+  display: block;
+  height: 12px;
+  position: relative;
+  width: 12px;
+} */
+
+.mainContainer label:hover {
+  background: rgb(230, 240, 93);
+  transition: 0.3s;
+}
+
+.memContainer {
+  display: flex;
+  height: inherit;
+  opacity: 0;
+  position: absolute;
+  width: inherit;
+  z-index: 0;
+  transform: translate(100%);
+  transition: 0.7s;
+  visibility: hidden;
+}
+
+.textCtrlContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.mainContainer .memText {
+  position: relative;
+}
+
+.mem1 {
+  background-image: url(../assets/images/mem1.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.mem2 {
+  background-image: url(../assets/images/mem2.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.mem3 {
+  background-image: url(../assets/images/mem3.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.mem4 {
+  background-image: url(../assets/images/mem4.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.mem5 {
+  background-image: url(../assets/images/mem5.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.mem6 {
+  background-image: url(../assets/images/mem6.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.mem7 {
+  background-image: url(../assets/images/mem7.jpg);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+#but1:checked ~ .mems > .mem1,
+#but2:checked ~ .mems > .mem2,
+#but3:checked ~ .mems > .mem3,
+#but4:checked ~ .mems > .mem4,
+#but5:checked ~ .mems > .mem5,
+#but6:checked ~ .mems > .mem6,
+#but7:checked ~ .mems > .mem7 {
+  opacity: 1;
+  z-index: 1;
+  transform: none;
+  visibility: visible;
+  width: 100%;
+  height: 100%;
+}
+
+#but1:checked ~ .textCtrlContainer .memText > .text1,
+#but2:checked ~ .textCtrlContainer .memText > .text2,
+#but3:checked ~ .textCtrlContainer .memText > .text3,
+#but4:checked ~ .textCtrlContainer .memText > .text4,
+#but5:checked ~ .textCtrlContainer .memText > .text5,
+#but6:checked ~ .textCtrlContainer .memText > .text6,
+#but7:checked ~ .textCtrlContainer .memText > .text7 {
+  opacity: 1;
+  z-index: 1;
+  transform: none;
+  width: 25rem;
+}
+
+#but1:checked ~ .textCtrlContainer .memController label:nth-of-type(1),
+#but2:checked ~ .textCtrlContainer .memController label:nth-of-type(2),
+#but3:checked ~ .textCtrlContainer .memController label:nth-of-type(3),
+#but4:checked ~ .textCtrlContainer .memController label:nth-of-type(4),
+#but5:checked ~ .textCtrlContainer .memController label:nth-of-type(5),
+#but6:checked ~ .textCtrlContainer .memController label:nth-of-type(6),
+#but7:checked ~ .textCtrlContainer .memController label:nth-of-type(7) {
+  background: rgb(53, 53, 53);
+}
+
+@media screen and (max-width: 450px) {
+  .textCtrlContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .memText {
+    display: flex;
+    order: 2;
+    text-align: start;
+    justify-content: flex-start;
+  }
+
+  .memController {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
