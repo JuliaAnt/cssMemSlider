@@ -1,10 +1,14 @@
 * {
-  margin: 0;
-  padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 h1 {
@@ -13,7 +17,7 @@ h1 {
 
 .mainContainer {
   height: 37.5rem;
-  margin: 50px auto 0;
+  margin: 20px auto 0;
   position: relative;
   width: 37.5rem;
 }
@@ -25,7 +29,6 @@ h1 {
 .mems {
   background-color: #fff;
   height: inherit;
-  /* overflow: hidden; */
   position: relative;
   width: inherit;
 }
@@ -52,8 +55,7 @@ h1 {
   -webkit-filter: hue-rotate(90deg);
   transition: 0.5s;
   position: absolute;
-
-  height: inherit;
+  height: 5rem;
   font-size: 18px;
 }
 
@@ -81,6 +83,11 @@ h1 {
   width: 12px;
 }
 
+.mainContainer label:hover {
+  border: 2px solid rgb(101, 186, 255);
+  transition: 0.3s;
+}
+
 .memContainer {
   display: flex;
   height: inherit;
@@ -89,7 +96,6 @@ h1 {
   width: inherit;
   z-index: 0;
   transform: translate(100%);
-  /* -webkit-filter: hue-rotate(90deg); */
   transition: 0.5s;
   visibility: hidden;
 }
@@ -160,7 +166,6 @@ h1 {
   visibility: visible;
   width: 100%;
   height: 100%;
-  /* -webkit-filter: none; */
 }
 
 #but1:checked ~ .textCtrlContainer .memText > .text1,
@@ -174,7 +179,6 @@ h1 {
   z-index: 1;
   transform: none;
   width: 25rem;
-  /* -webkit-filter: none; */
 }
 
 #but1:checked ~ .textCtrlContainer .memController label:nth-of-type(1),
@@ -188,4 +192,23 @@ h1 {
 }
 
 @media screen and (max-width: 450px) {
+  .textCtrlContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .memText {
+    display: flex;
+    order: 2;
+    text-align: start;
+    justify-content: flex-start;
+  }
+
+  .memController {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 }
