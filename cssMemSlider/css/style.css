@@ -52,8 +52,7 @@ h1 {
   opacity: 0;
   z-index: 0;
   transform: translate(200%);
-  -webkit-filter: hue-rotate(90deg);
-  transition: 0.5s;
+  transition: 0.7s;
   position: absolute;
   height: 5rem;
   font-size: 18px;
@@ -66,25 +65,25 @@ h1 {
 .mainContainer label {
   cursor: pointer;
   display: inline-block;
-  height: 12px;
-  margin: 5px;
+  height: 25px;
   position: relative;
-  width: 12px;
+  width: 25px;
   border-radius: 50%;
-  border: 2px solid rgb(0, 70, 128);
+  background-clip: content-box;
+  background: rgb(128, 128, 128);
+  border: 6px solid rgba(255, 255, 255, 1);
 }
 
-.mainContainer label:focus {
-  border: 2px solid rgb(0, 70, 128);
+/* .mainContainer label:focus {
   content: ' ';
   display: block;
   height: 12px;
   position: relative;
   width: 12px;
-}
+} */
 
 .mainContainer label:hover {
-  border: 2px solid rgb(101, 186, 255);
+  background: rgb(230, 240, 93);
   transition: 0.3s;
 }
 
@@ -96,7 +95,7 @@ h1 {
   width: inherit;
   z-index: 0;
   transform: translate(100%);
-  transition: 0.5s;
+  transition: 0.7s;
   visibility: hidden;
 }
 
@@ -188,7 +187,7 @@ h1 {
 #but5:checked ~ .textCtrlContainer .memController label:nth-of-type(5),
 #but6:checked ~ .textCtrlContainer .memController label:nth-of-type(6),
 #but7:checked ~ .textCtrlContainer .memController label:nth-of-type(7) {
-  background: rgb(0, 70, 128);
+  background: rgb(53, 53, 53);
 }
 
 @media screen and (max-width: 450px) {
